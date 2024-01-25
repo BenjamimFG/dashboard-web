@@ -11,9 +11,19 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
-      - '5432:5432'
+      - 5432:5432
     networks:
       - backend
+  
+  api:
+    depends_on:
+      - database
+    build: api
+    ports:
+      - 8000:8000
+    networks:
+     - backend
+
 
 networks:
   backend:

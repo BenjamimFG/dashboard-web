@@ -5,6 +5,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY ./src ./src
+COPY .env .env
 
 ENV FLASK_APP src/server.py
 ENV FLASK_ENV development

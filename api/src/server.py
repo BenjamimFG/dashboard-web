@@ -2,6 +2,7 @@ import os
 
 from dotenv import load_dotenv
 from flask import Flask
+from flask_cors import CORS
 
 from controllers import index_controller, region_controller, state_controller
 from db import Db
@@ -14,6 +15,9 @@ load_dotenv(dotenv_path)
 Db.init_pool()
 
 app = Flask(__name__)
+
+# TODO: permitir cross-origin somente ao domínio do frontend
+CORS(app, resources={"*": {'origins': "*"}})
 
 @app.errorhandler(404)
 def handle_404(err):

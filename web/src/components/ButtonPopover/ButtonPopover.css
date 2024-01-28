@@ -1,0 +1,16 @@
+.popover .MuiPaper-root {
+  padding: 0.4rem;
+}
+
+.popover .MuiPaper-root label {
+  margin: 0;
+}
+
+.popover .MuiPaper-root .label {
+  font-size: 0.8rem;
+}
+
+button.MuiButton-root.button-popover {
+  border-radius: 1.2rem;
+  text-transform: none;
+}

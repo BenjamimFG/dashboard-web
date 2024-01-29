@@ -19,6 +19,8 @@ code {
 main {
   flex: 4 4 0;
   background-color: #f2f4fd;
+  margin-left: calc(min(20vw, 250px) + 1em);
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5 {

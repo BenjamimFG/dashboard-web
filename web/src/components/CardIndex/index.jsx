@@ -1,8 +1,11 @@
+import QueryStatsOutlined from '@mui/icons-material/QueryStatsOutlined';
+
 import './CardIndex.css'
 
 export default function CardIndex({ rank, value, label, color }) {
   return <div className="card">
-    <span className="icon">icon</span>
+    {/* TODO: passar icone como prop */}
+    <span className="icon"><QueryStatsOutlined /></span>
     <div className="card-container">
       <div className="left">
         <div className='label'>2022</div>

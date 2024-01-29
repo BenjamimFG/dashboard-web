@@ -10,24 +10,8 @@ import './profile.css';
 import StateOrRegionButton from '../../components/StateOrRegionButton';
 import DetailedIndexChart from '../../components/DetailedIndexChart';
 
-// const capacities_indexes = [3, 4, 5, 6, 7, 8, 9];
-// const results_indexes = [11, 12, 13, 14, 15];
-
-const test = [
-  { label: 'Investimento Público em C&T', rank: '4', value: '0.568' },
-  { label: 'Investimento Público em C&T', rank: '4', value: '0.568' },
-  { label: 'Investimento Público em C&T', rank: '4', value: '0.568' },
-  { label: 'Investimento Público em C&T', rank: '4', value: '0.568' },
-  { label: 'Investimento Público em C&T', rank: '4', value: '0.568' },
-  { label: 'Investimento Público em C&T', rank: '4', value: '0.568' },
-  { label: 'Investimento Público em C&T', rank: '4', value: '0.568' },
-  { label: 'Investimento Público em C&T', rank: '4', value: '0.568' },
-  { label: 'Investimento Público em C&T', rank: '4', value: '0.568' },
-  { label: 'Investimento Público em C&T', rank: '4', value: '0.568' },
-  { label: 'Investimento Público em C&T', rank: '4', value: '0.568' },
-  { label: 'Investimento Público em C&T', rank: '4', value: '0.568' },
-  { label: 'Investimento Público em C&T', rank: '4', value: '0.568' },
-]
+const capacities_indexes = [3, 4, 5, 6, 7, 8, 9];
+const results_indexes = [11, 12, 13, 14, 15];
 
 export default function Profile() {
   const context = useContext(StateContext);
@@ -51,7 +35,8 @@ export default function Profile() {
     else { return; }
 
     apiPromise.then(res => {
-      setData(res);
+      const newData = [...res];
+      setData(newData);
     });
   }, [selectedRegion, selectedState, context]);
 
@@ -67,10 +52,27 @@ export default function Profile() {
     </Header>
     <article style={{ padding: '1rem', display: 'flex', flexDirection: 'row', gap: '1em' }}>
       <div style={{ flex: '1 1 0' }}>
-        <CardGrid color='#2f80ed' data={test} />
+        <CardGrid
+          title='Capacidades'
+          color='#2f80ed'
+          style={{ marginBottom: '1em' }}
+          data={
+            data
+              .filter(d => capacities_indexes.indexOf(d.index_data_id) !== -1)
+              .map(d => { return { label: d.name, rank: d.rank.toString(), value: d.value } })
+          }
+        />
+        <CardGrid
+          title='Resultados'
+          color='#3bc3df'
+          data={
+            data
+              .filter(d => results_indexes.indexOf(d.index_data_id) !== -1)
+              .map(d => { return { label: d.name, rank: d.rank.toString(), value: d.value } })}
+        />
       </div>
       <div style={{ flex: '1 1 0' }}>
-        <DetailedIndexChart data={data} title={selectedRegionStateName} />
+        <DetailedIndexChart data={data} title={selectedRegionStateName} indexStats={context.indexStats} />
       </div>
     </article>
   </>

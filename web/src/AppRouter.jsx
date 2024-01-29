@@ -13,6 +13,7 @@ export default function AppRouter() {
   const [regions, setRegions] = useState([]);
   const [states, setStates] = useState([]);
   const [indexes, setIndexes] = useState([]);
+  const [indexStats, setIndexStats] = useState([]);
 
 
   useEffect(() => {
@@ -27,12 +28,16 @@ export default function AppRouter() {
     apiService.getIndexes()
       .then(res => setIndexes(res.data))
       .catch(e => console.error(e));
+
+    apiService.getIndexesStats()
+      .then(res => setIndexStats(res.data))
+      .catch(e => console.error(e));
   }, [])
 
 
   return (
     <BrowserRouter>
-      <StateContext.Provider value={{ regions, states, indexes }}>
+      <StateContext.Provider value={{ regions, states, indexes, indexStats }}>
         <Sidebar />
         <main>
           <Routes>

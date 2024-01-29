@@ -18,19 +18,19 @@ class ApiService {
   }
 
   async getStates() {
-    const res = await fetch(`${this.baseUrl}/states`);
+    const res = await this.apiFetch('/states');
 
     return res.json();
   }
 
   async getRegions() {
-    const res = await fetch(`${this.baseUrl}/regions`);
+    const res = await this.apiFetch('/regions');
 
     return res.json();
   }
 
   async getIndexes() {
-    const res = await fetch(`${this.baseUrl}/indexes`);
+    const res = await this.apiFetch('/indexes');
 
     return res.json();
   }
@@ -44,7 +44,7 @@ class ApiService {
   async getIndexById(indexId, regionsIds) {
     const searchParams = regionsIds.map(rId => ['region', rId.toString()]);
 
-    const res = await fetch(`${this.baseUrl}/indexes/${indexId}?` + new URLSearchParams(searchParams));
+    const res = await this.apiFetch(`/indexes/${indexId}?` + new URLSearchParams(searchParams));
 
     return res.json();
   }
@@ -57,6 +57,12 @@ class ApiService {
 
   async getIndexesByRegion(regionId) {
     const res = await this.apiFetch(`/regions/${regionId}`);
+
+    return res.json();
+  }
+
+  async getIndexesStats() {
+    const res = await this.apiFetch('/indexes/statistics');
 
     return res.json();
   }

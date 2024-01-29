@@ -1,11 +1,12 @@
+import QueryStatsOutlined from '@mui/icons-material/QueryStatsOutlined';
 import CardIndex from '../CardIndex';
 import './CardGrid.css'
 
-export default function CardGrid({ data, color }) {
-  return <div className='card-grid-wrapper'>
+export default function CardGrid({ data, color, title, style }) {
+  return <div className='card-grid-wrapper' style={style}>
     <div className='card-grid-header' style={{ backgroundColor: color }}>
-      <span className="card-grid-icon" style={{ backgroundColor: color }}>icon</span>
-      <h5>Capacidades</h5>
+      <span className="card-grid-icon" style={{ backgroundColor: color }}><QueryStatsOutlined /></span>
+      <h5>{title}</h5>
     </div>
     <div className="card-grid">
       {data.map((d, i) => {

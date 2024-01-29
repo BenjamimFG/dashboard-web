@@ -167,3 +167,4 @@ A aplicação foi desenvolvida em um curto período de tempo, por tanto cabe uma
   * Adicionar tooltips ao mapa na página /ranking
   * Utilizar CSS modules ou uma biblioteca de UI padronizada como bootstrap ou tailwind
   * Tratar possíveis erros dos dados recebidos da api
+  * Tornar o layout responsivo

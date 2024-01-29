@@ -5,7 +5,8 @@
 3. [Rodando serviços individualmente](#rodando-serviços-individualmente)  
     3.1. [DB](#db)  
     3.2. [API](#api-1)  
-    3.3. [WEB](#frontend-web-1)  
+    3.3. [WEB](#frontend-web-1) 
+4. [Observações](#observações) 
 
 ## Bibliotecas utilizadas
 ### Banco de dados
@@ -148,3 +149,21 @@ Subir aplicação em modo desenvolvedor:
 ```bash
 npm start
 ```
+
+## Observações
+A aplicação foi desenvolvida em um curto período de tempo, por tanto cabe uma vasta lista de melhorias à mesma, segue uma lista com **algumas** sugestões com possíveis pontos de melhora para a aplicação:
+
+* DB  
+  * Utilizar credenciais seguras ao invés das padrão
+  * Utilizar Secrets do docker compose para passar as credenciais para o banco de dados
+  * Salvar ranking dos indices no banco de dados e atualizar sempre que ouver uma alteração dos indíces (trigger)
+* API
+  * Utilizar uma ORM, como SQLAlchemy, caso necessário
+  * Realizar tratamento de erros e retornar os devidos códigos HTTP de acordo com o padrão REST
+  * Adicionar camada de cache
+  * Servir em modo deploy com um servidor WSGI
+* Frontend WEB
+  * Adicionar backdrop com spinner para sinalizar ao usuário que a aplicação está carregando
+  * Adicionar tooltips ao mapa na página /ranking
+  * Utilizar CSS modules ou uma biblioteca de UI padronizada como bootstrap ou tailwind
+  * Tratar possíveis erros dos dados recebidos da api

@@ -21,6 +21,8 @@ def show(state_id: str):
     all_states_ranking = [d for l in all_states_ranking for d in l]
     
     state_indexes_ranking = list(filter(lambda d: d['state_id'] == state_id, all_states_ranking))
+    for d in state_indexes_ranking:
+        del d['state_id']
 
     return state_indexes_ranking, 200
 

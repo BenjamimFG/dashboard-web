@@ -59,7 +59,8 @@ def get_index_data(index_id: int, region_ids: list[int]) -> list[dict]:
         FROM state_index_data AS SDI 
         INNER JOIN index_data as ID 
         on SDI.index_data_id = ID.id 
-        WHERE index_data_id = {0};    
+        WHERE index_data_id = {0};
+        ORDER BY rank ASC;
     '''
 
     region_sql = '''
@@ -75,7 +76,8 @@ def get_index_data(index_id: int, region_ids: list[int]) -> list[dict]:
             WHERE index_data_id = %(index_id)s
         ) as R
         ON R.state_id = SDI.state_id
-        WHERE SDI.index_data_id = %(index_id)s AND S.region_id = ANY(%(region_ids)s);
+        WHERE SDI.index_data_id = %(index_id)s AND S.region_id = ANY(%(region_ids)s)
+        ORDER BY R.rank ASC;
     '''
     with Db.pool.connection() as conn:
         with conn.cursor() as cur:

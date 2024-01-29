@@ -1,0 +1,33 @@
+.card-grid-wrapper {
+  padding-top: 18px;
+  position: relative;
+}
+
+.card-grid-header {
+  height: 2em;
+  color: #fff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.card-grid-header > h5 {
+  margin-left: calc(2em + 36px);
+  text-align: left;
+}
+
+.card-grid-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 1em;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1em;
+}

@@ -1,0 +1,15 @@
+.detailed-index-card {
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.detailed-index-title {
+  font-weight: bold;
+  color: #094780;
+  margin-bottom: 1rem;
+}
+
+.detailed-cards {
+  margin-bottom: 1rem;
+}

@@ -9,6 +9,7 @@ import ButtonPopover from '../../components/ButtonPopover';
 
 import topography from '../../assets/br_states.json';
 import './ranking.css'
+import Header from '../../components/Header';
 
 const colorScale = d3.scaleThreshold(
   [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
@@ -129,19 +130,15 @@ export default function Ranking() {
   }, [data])
 
   return <>
-    <header>
-      <span className="title-wrapper">
-        <LeaderboardOutlinedIcon />
-        <h1>Ranking</h1>
-      </span>
+    <Header icon={<LeaderboardOutlinedIcon />} title='Ranking'>
       <ButtonPopover
         id='index-button'
         buttonLabel='Selecione um indicador'
       >
         <FormControl>
           <RadioGroup
-            aria-labelledby="demo-controlled-radio-buttons-group"
-            name="controlled-radio-buttons-group"
+            aria-labelledby="radio-buttons-group"
+            name="radio-buttons-group"
             value={selectedIndex}
             onChange={(e) => {
               setSelectedIndex(Number.parseInt(e.target.value));
@@ -184,7 +181,7 @@ export default function Ranking() {
           </FormGroup>
         </FormControl>
       </ButtonPopover>
-    </header>
+    </Header>
     <article>
       <div className='index-name-wrapper'><h1>{selectedIndexName}</h1></div>
       <svg id='brasil-svg' width='600' height='600'></svg>

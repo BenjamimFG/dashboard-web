@@ -1,5 +1,6 @@
 .popover .MuiPaper-root {
   padding: 0.4rem;
+  min-width: 200px;
 }
 
 .popover .MuiPaper-root label {

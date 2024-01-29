@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Sidebar from "./components/sidebar";
+import Sidebar from "./components/Sidebar";
 import Ranking from "./routes/ranking";
 import Profile from "./routes/profile";
 import Compare from "./routes/compare";

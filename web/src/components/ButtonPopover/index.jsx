@@ -6,7 +6,7 @@ import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
 import './ButtonPopover.css';
 
-export default function ButtonPopover({children, id, buttonLabel}) {
+export default function ButtonPopover({ children, id, buttonLabel, sx }) {
   const [anchorPopover, setAnchorPopover] = useState(null);
 
   const handleClickPopover = (event) => {
@@ -26,6 +26,7 @@ export default function ButtonPopover({children, id, buttonLabel}) {
       onClick={handleClickPopover}
       className='button-popover'
       id={id}
+      sx={sx}
     >
       {buttonLabel}
       {open ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}

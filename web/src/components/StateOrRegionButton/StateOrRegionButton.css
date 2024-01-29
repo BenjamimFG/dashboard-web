@@ -1,0 +1,29 @@
+.tree-view-toggler {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* adiciona uma set (caret) no pseudo-elemento ::before por meio do 
+código unicode \25B6 */
+.tree-view-toggler::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* rotaciona a seta (caret) caso a classe .active seja aplicada */
+.tree-view-toggler.active::before {
+  transform: rotate(90deg);
+}
+
+/* esconde por padrão a lista nested */
+.nested {
+  display: none;
+  margin-left: 2em;
+}
+
+/* mostra a lista com a classe .active */
+.nested.active {
+  display: block;
+} 

@@ -1,4 +1,4 @@
-# Dasboard web credenciamento FIEC
+# Dashboard web credenciamento FIEC
 ## Sumário
 1. [Bibliotecas utilizadas](#bibliotecas-utilizadas)  
 2. [Rodando a aplicação com docker compose](#rodando-a-aplicação-com-docker-compose)  

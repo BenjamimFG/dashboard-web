@@ -1,11 +1,11 @@
 # Dasboard web credenciamento FIEC
 ## Sumário
-[1. Bibliotecas utilizadas](#bibliotecas-utilizadas)  
-[2. Rodando a aplicação com docker compose](#rodando-a-aplicação-com-docker-compose)  
-[3. Rodando serviços individualmente](#rodando-serviços-individualmente)  
-    [3.1. DB](#db)  
-    [3.2. API](#api-1)  
-    [3.3. WEB](#frontend-web-1)  
+1. [Bibliotecas utilizadas](#bibliotecas-utilizadas)  
+2. [Rodando a aplicação com docker compose](#rodando-a-aplicação-com-docker-compose)  
+3. [Rodando serviços individualmente](#rodando-serviços-individualmente)  
+    3.1. [DB](#db)  
+    3.2. [API](#api-1)  
+    3.3. [WEB](#frontend-web-1)  
 
 ## Bibliotecas utilizadas
 ### Banco de dados

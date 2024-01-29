@@ -1,0 +1,41 @@
+table.table-capacities-results {
+  background-color: #fff;
+  border-collapse: collapse;
+  border: 0.5em solid white;
+}
+
+table.table-capacities-results:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+table.table-capacities-results th,
+table.table-capacities-results td{
+  padding: 0 1rem;
+}
+
+table.table-capacities-results > thead {
+  background-color: #094780;
+  color: #fff;
+}
+
+table.table-capacities-results > thead:not(:last-child) {
+  border-bottom: 1px solid white;
+}
+
+table.table-capacities-results > thead > tr > th:not(:last-child) {
+  border-right: 1px solid white;
+}
+
+table.table-capacities-results tr:not(:last-child) {
+  border-bottom: 1px solid lightgray;
+}
+
+table.table-capacities-results > tbody > tr > td {
+  width: 15%;
+  padding: 0;
+}
+
+table.table-capacities-results > tbody > tr > td:first-child {
+  width: 70%;
+  border-right: 1px solid lightgray;
+}

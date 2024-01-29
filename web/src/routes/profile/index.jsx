@@ -44,6 +44,7 @@ export default function Profile() {
   return <>
     <Header icon={<QueryStatsOutlinedIcon />} title='Perfil'>
       <StateOrRegionButton
+        label='Região'
         regions={context.regions}
         states={context.states}
         setParentRegion={setSelectedRegion}
@@ -72,7 +73,7 @@ export default function Profile() {
         />
       </div>
       <div style={{ flex: '1 1 0' }}>
-        <DetailedIndexChart data={data} title={selectedRegionStateName} indexStats={context.indexStats} />
+        <DetailedIndexChart data={[data]} title={[selectedRegionStateName]} indexStats={context.indexStats} />
       </div>
     </article>
   </>

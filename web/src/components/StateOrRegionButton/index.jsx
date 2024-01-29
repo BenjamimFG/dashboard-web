@@ -5,10 +5,10 @@ import ButtonPopover from '../ButtonPopover';
 
 import './StateOrRegionButton.css';
 
-export default function StateOrRegionButton({ regions, states, setParentState, setParentRegion }) {
+export default function StateOrRegionButton({ regions, states, setParentState, setParentRegion, sx, label, defaultRegion }) {
   const [openTreeView, setOpenTreeView] = useState(null);
 
-  const [selectedRegion, setSelectedRegion] = useState(1);
+  const [selectedRegion, setSelectedRegion] = useState(defaultRegion ?? 1);
   const [selectedState, setSelectedState] = useState(null);
 
   const handleToggleTreeView = (id) => {
@@ -34,7 +34,7 @@ export default function StateOrRegionButton({ regions, states, setParentState, s
     setParentState(null);
   }
 
-  return <ButtonPopover buttonLabel='Região' sx={{ minWidth: '200px' }} >
+  return <ButtonPopover buttonLabel={label} sx={{ minWidth: '200px', ...sx }} >
     <div id="tree-view">
       {regions.map(r => {
         return <div key={r.id}>

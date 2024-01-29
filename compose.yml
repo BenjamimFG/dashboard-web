@@ -5,7 +5,8 @@ services:
     image: postgres:16.1
     volumes:
       - ./db/data:/var/lib/postgresql/data
-      - ./db/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./db/sql/01-table-definition.sql:/docker-entrypoint-initdb.d/01-table-definition.sql
+      - ./db/sql/02-data-insert.sql:/docker-entrypoint-initdb.d/02-data-insert.sql
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres

@@ -59,7 +59,7 @@ def get_index_data(index_id: int, region_ids: list[int]) -> list[dict]:
         FROM state_index_data AS SDI 
         INNER JOIN index_data as ID 
         on SDI.index_data_id = ID.id 
-        WHERE index_data_id = {0};
+        WHERE index_data_id = {0}
         ORDER BY rank ASC;
     '''
 

@@ -125,7 +125,7 @@ export default function Ranking() {
       .enter()
       .append('text')
       .attr("x", (s) => x(data[s]?.value) + 5)
-      .attr("y", (s) => y(yLabels[s]) + 15)
+      .attr("y", (s) => y(yLabels[s]) + ((y.bandwidth()) / 2) + 5)
       .text((s) => data[s].value);
   }, [data])
 
